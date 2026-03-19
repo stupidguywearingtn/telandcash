@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-primary text-white rounded-xl px-8 py-4 font-semibold shadow-primary-glow hover:-translate-y-[3px] transition-all duration-300;
+  }
+}
+
+/* Custom Utilities for Animations that aren't native in Tailwind completely */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  animation: marquee 30s linear infinite;
+  /* Will be handled in component for gap and padding */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
