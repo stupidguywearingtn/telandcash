@@ -103,21 +103,23 @@ export function Hero() {
               
               {/* Floating badges */}
               <motion.div 
-                animate={{ y: [0, -6, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute right-0 top-32 bg-white/95 backdrop-blur-xl px-5 py-3 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-white z-50 flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="absolute right-[-20px] top-32 bg-white/10 backdrop-blur-xl px-5 py-3 rounded-[14px] shadow-[0_8px_32px_rgba(37,99,235,0.2)] border border-white/20 z-50 flex items-center gap-3"
               >
-                 <Shield className="w-5 h-5 text-green-500" />
-                 <span className="text-sm font-bold text-slate-800 whitespace-nowrap">Batterie testée +85%</span>
+                 <Shield className="w-5 h-5 text-[#93c5fd]" />
+                 <span className="text-[13px] md:text-sm font-medium text-white whitespace-nowrap">Batterie testée +85%</span>
               </motion.div>
 
               <motion.div 
-                animate={{ y: [0, 6, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                className="absolute left-0 bottom-40 bg-white/95 backdrop-blur-xl px-5 py-3 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-white z-50 flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="absolute left-0 bottom-40 bg-white/10 backdrop-blur-xl px-5 py-3 rounded-[14px] shadow-[0_8px_32px_rgba(37,99,235,0.2)] border border-white/20 z-50 flex items-center gap-3"
               >
-                 <CheckCircle2 className="w-5 h-5 text-blue-500" />
-                 <span className="text-sm font-bold text-slate-800 whitespace-nowrap">Garantie 24 mois</span>
+                 <CheckCircle2 className="w-5 h-5 text-[#93c5fd]" />
+                 <span className="text-[13px] md:text-sm font-medium text-white whitespace-nowrap">Garantie 24 mois</span>
               </motion.div>
             </div>
           </motion.div>

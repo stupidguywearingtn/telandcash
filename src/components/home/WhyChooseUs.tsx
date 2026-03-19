@@ -7,7 +7,7 @@ export function WhyChooseUs() {
   return (
     <section className="py-24 bg-[#0B0F19] text-white overflow-hidden relative">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-16 items-center">
           
           {/* Left Column (Text & Stats) */}
           <motion.div 
@@ -24,7 +24,7 @@ export function WhyChooseUs() {
               La tech premium à prix juste
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-8 leading-[1.15]">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-8 leading-[1.15]">
               Jusqu'à <span className="text-blue-500">-70%</span> sur<br /> les meilleurs smartphones
             </h2>
             

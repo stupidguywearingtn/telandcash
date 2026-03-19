@@ -30,7 +30,7 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[#0B0F19] text-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
@@ -39,7 +39,7 @@ export function FAQ() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-primary text-white rounded-[2rem] p-10 md:p-14 shadow-2xl relative overflow-hidden"
+            className="bg-primary text-white rounded-[2rem] p-10 md:p-14 shadow-2xl relative overflow-hidden h-full"
           >
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             
@@ -49,23 +49,23 @@ export function FAQ() {
                 Ne manquez aucune bonne affaire !
               </h2>
               <p className="text-white/80 mb-8 text-lg font-medium max-w-md">
-                Inscrivez-vous à notre newsletter et recevez nos offres exclusives en avant-première, ainsi qu'un code promo de -10€ sur votre première commande.
+                Inscrivez-vous à notre newsletter et recevez nos offres exclusives en avant-première.
               </p>
 
               <form className="flex flex-col sm:flex-row gap-4 mb-6">
                 <input 
                   type="email" 
                   placeholder="Votre adresse email" 
-                  className="flex-grow rounded-xl px-6 py-4 text-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-inner"
+                  className="flex-grow rounded-xl px-6 py-4 bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner backdrop-blur-md transition-all"
                   required
                 />
-                <Button className="bg-foreground text-white hover:bg-foreground/90 shadow-xl border-none">
+                <Button className="bg-white text-blue-600 hover:bg-white/90 shadow-xl border-none font-bold">
                   S'inscrire
                 </Button>
               </form>
               
-              <p className="text-xs text-white/60">
-                En vous inscrivant, vous acceptez notre politique de confidentialité. Vous pouvez vous désinscrire à tout moment. (RGPD)
+              <p className="text-[10px] text-white/40">
+                En vous inscrivant, vous acceptez notre politique de confidentialité. (RGPD)
               </p>
             </div>
           </motion.div>
@@ -77,39 +77,46 @@ export function FAQ() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-8">Questions Fréquentes</h2>
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div 
-                  key={index} 
-                  className="border border-border rounded-2xl overflow-hidden bg-white hover:border-primary/50 transition-colors"
-                >
-                  <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-lg focus:outline-none"
+            <div className="flex flex-col gap-[10px]">
+              {faqs.map((faq, index) => {
+                const isOpen = openIndex === index;
+                return (
+                  <div 
+                    key={index} 
+                    className={`group transition-all duration-300 rounded-[12px] border overflow-hidden ${
+                      isOpen 
+                        ? "bg-blue-500/[0.06] border-blue-500/20 shadow-[inset_3px_0_0_0_#3b82f6]" 
+                        : "bg-white/[0.03] border-white/[0.08] hover:bg-white/[0.06] hover:translate-y-[-1px] cursor-pointer"
+                    }`}
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
                   >
-                    {faq.question}
-                    {openIndex === index ? (
-                      <ChevronUp className="w-5 h-5 text-primary flex-shrink-0" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                    )}
-                  </button>
-                  <AnimatePresence>
-                    {openIndex === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <div className="px-6 pb-5 text-muted-foreground">
-                          {faq.answer}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
+                    <button
+                      className="w-full text-left px-6 py-5 flex items-center justify-between font-medium text-[15px] md:text-[16px] focus:outline-none"
+                    >
+                      <span className={isOpen ? "text-blue-400" : "text-white/90"}>{faq.question}</span>
+                      <ChevronDown 
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          isOpen ? "rotate-180 text-blue-500" : "text-white/40"
+                        }`} 
+                      />
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <div className="px-6 pb-6 text-white/60 text-sm leading-relaxed border-t border-white/5 pt-2">
+                            {faq.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
 
