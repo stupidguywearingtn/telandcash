@@ -25,9 +25,9 @@ export function Home() {
       <BestOffers />
       <Grades />
       <HowItWorks />
-      <WhyChooseUs />
-      <Reviews />
       <Warranty />
+      <Reviews />
+      <WhyChooseUs />
       <WhyRefurbished />
       <FAQ />
     </motion.div>

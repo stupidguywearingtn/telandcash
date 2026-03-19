@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, CheckCircle2, Battery, RefreshCw, Award } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Battery, RefreshCw } from 'lucide-react';
 
 export function WhyRefurbished() {
   return (
@@ -22,8 +22,8 @@ export function WhyRefurbished() {
               COMPRENDRE LE RECONDITIONNÉ
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-[52px] font-black tracking-tight mb-6 leading-[1.05] text-slate-900">
-              Un smartphone reconditionné, c'est quoi exactement ?
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-8 leading-[1.1]">
+              Un smartphone reconditionné,<br /> c'est quoi exactement ?
             </h2>
             
             <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-xl font-medium leading-relaxed">
@@ -90,11 +90,19 @@ export function WhyRefurbished() {
               />
             </div>
             
-            <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-3xl shadow-2xl max-w-[200px] z-10">
-              <Award className="w-8 h-8 mb-3" />
-              <div className="font-black text-xl leading-tight">Certifié Premium</div>
-              <div className="text-blue-100 text-sm mt-1">Qualité garantie</div>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="absolute -bottom-6 -right-6 bg-white/10 backdrop-blur-[16px] saturate-[180%] p-[12px_18px] rounded-[16px] shadow-[0_8px_32px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.3)] border border-white/20 z-10 flex flex-col gap-1 min-w-[180px]"
+            >
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-[#93c5fd]" />
+                <span className="font-semibold text-white text-[14px]">Certifié Premium</span>
+              </div>
+              <div className="text-white/70 text-[12px] ml-7">Qualité garantie</div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

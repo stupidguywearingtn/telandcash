@@ -43,7 +43,7 @@ export function Grades() {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-[#f8fafc] relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
           <motion.h2 

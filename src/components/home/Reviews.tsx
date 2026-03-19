@@ -54,7 +54,7 @@ export function Reviews() {
   const googleMapsUrl = "https://www.google.com/search?sca_esv=bb692e0fdf80bd80&q=Tel%20and%20Cash%20Angers";
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-zinc-50 overflow-hidden relative">
+    <section className="py-24 bg-[#f8fafc] overflow-hidden relative">
       <div className="container mx-auto px-4 max-w-7xl mb-16 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="max-w-xl text-center md:text-left">

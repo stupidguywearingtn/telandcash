@@ -97,7 +97,7 @@ export function Hero() {
               <img 
                 src="/hero.png" 
                 alt="Smartphones Premium" 
-                className="relative z-10 w-[70%] h-auto object-contain transition-transform duration-700 hover:scale-[1.5] scale-[1.45] drop-shadow-2xl translate-x-4"
+                className="relative z-10 w-[60%] h-auto object-contain transition-transform duration-700 hover:scale-[2.1] scale-[2.0] drop-shadow-2xl translate-x-8"
                 style={{ filter: 'drop-shadow(0 30px 40px rgba(0,0,0,0.15))' }}
               />
               
@@ -106,20 +106,20 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute right-[-20px] top-32 bg-white/10 backdrop-blur-xl px-5 py-3 rounded-[14px] shadow-[0_8px_32px_rgba(37,99,235,0.2)] border border-white/20 z-50 flex items-center gap-3"
+                className="absolute right-[-40px] top-32 bg-white/40 backdrop-blur-xl px-5 py-3 rounded-[14px] shadow-[0_8px_32px_rgba(37,99,235,0.2)] border border-white/20 z-50 flex items-center gap-3"
               >
-                 <Shield className="w-5 h-5 text-[#93c5fd]" />
-                 <span className="text-[13px] md:text-sm font-medium text-white whitespace-nowrap">Batterie testée +85%</span>
+                 <Shield className="w-5 h-5 text-[#2563eb]" />
+                 <span className="text-[13px] md:text-sm font-medium text-[#1e3a5f] whitespace-nowrap">Batterie testée +85%</span>
               </motion.div>
 
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute left-0 bottom-40 bg-white/10 backdrop-blur-xl px-5 py-3 rounded-[14px] shadow-[0_8px_32px_rgba(37,99,235,0.2)] border border-white/20 z-50 flex items-center gap-3"
+                className="absolute left-0 bottom-40 bg-white/40 backdrop-blur-xl px-5 py-3 rounded-[14px] shadow-[0_8px_32px_rgba(37,99,235,0.2)] border border-white/20 z-50 flex items-center gap-3"
               >
-                 <CheckCircle2 className="w-5 h-5 text-[#93c5fd]" />
-                 <span className="text-[13px] md:text-sm font-medium text-white whitespace-nowrap">Garantie 24 mois</span>
+                 <CheckCircle2 className="w-5 h-5 text-[#2563eb]" />
+                 <span className="text-[13px] md:text-sm font-medium text-[#1e3a5f] whitespace-nowrap">Garantie 24 mois</span>
               </motion.div>
             </div>
           </motion.div>

@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 export function WhyChooseUs() {
   return (
-    <section className="py-24 bg-[#0B0F19] text-white overflow-hidden relative">
+    <section className="py-24 bg-[#0f172a] text-white overflow-hidden relative">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-16 items-center">
           
           {/* Left Column (Text & Stats) */}
           <motion.div 
@@ -24,7 +24,7 @@ export function WhyChooseUs() {
               La tech premium à prix juste
             </div>
             
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-8 leading-[1.15]">
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-black tracking-tight mb-8 leading-[1.15]">
               Jusqu'à <span className="text-blue-500">-70%</span> sur<br /> les meilleurs smartphones
             </h2>
             
@@ -48,8 +48,8 @@ export function WhyChooseUs() {
               </div>
             </div>
 
-            <Link to="/catalogue">
-              <Button size="lg" className="text-lg bg-blue-600 hover:bg-blue-500 text-white rounded-2xl px-10 py-7 shadow-xl shadow-blue-500/20 font-bold border border-blue-400/20 transition-all hover:-translate-y-1">
+            <Link to="/boutique">
+              <Button className="px-7 py-3 text-sm md:text-base font-semibold rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-500/20 border border-blue-400/20 transition-all hover:-translate-y-1">
                 Voir tous nos smartphones
               </Button>
             </Link>
@@ -64,30 +64,30 @@ export function WhyChooseUs() {
             className="grid grid-cols-2 gap-4 relative mt-12"
           >
             {/* Top Left: Large square image */}
-            <div className="col-span-1 rounded-[32px] overflow-hidden relative shadow-2xl h-[250px] md:h-[300px] border border-white/5 group bg-white/5 p-5">
+            <div className="col-span-1 rounded-[32px] overflow-hidden relative shadow-2xl h-[250px] md:h-[300px] border border-white/5 group bg-white/5 p-[18px]">
               <img src="https://images.unsplash.com/photo-1598327105666-5b89351cb322?auto=format&fit=crop&w=800&q=80" alt="Happy customer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
 
             {/* Top Right & Bottom Right wrapper to map grid properly */}
             <div className="col-span-1 flex flex-col gap-4 md:gap-6">
               {/* Top Right: Warranty Card */}
-              <div className="bg-[#1A202E] rounded-[32px] p-5 border border-white/5 flex flex-col justify-center h-[120px] md:h-[140px] shadow-xl hover:bg-[#1E2536] transition-colors">
+              <div className="bg-[#1A202E] rounded-[32px] p-[18px_20px] border border-white/5 flex flex-col justify-center h-[120px] md:h-[140px] shadow-xl hover:bg-[#1E2536] transition-colors">
                 <div className="flex items-center gap-3 mb-2">
                   <Shield className="w-6 h-6 text-blue-400" />
                   <span className="font-bold text-lg">Garantie</span>
                 </div>
-                <span className="text-slate-400 text-sm font-medium ml-9">24 mois incluse</span>
+                <span className="text-slate-400 text-sm font-medium ml-9">24 mois inclus</span>
               </div>
 
               {/* Bottom Right: Vertical image */}
-              <div className="rounded-[32px] overflow-hidden relative shadow-2xl flex-grow border border-white/5 group bg-white/5 p-5">
+              <div className="rounded-[32px] overflow-hidden relative shadow-2xl flex-grow border border-white/5 group bg-white/5 p-[18px]">
                 <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=800&q=80" alt="Man taking photo" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
             </div>
 
             {/* Bottom Left: Note Card */}
-            <div className="col-span-1 bg-[#162032] rounded-[32px] p-5 md:p-5 border border-blue-500/10 flex flex-col justify-center h-[140px] md:h-[180px] shadow-xl mt-[-50px] md:mt-[-80px] hover:bg-[#1A263B] transition-colors relative z-20">
+            <div className="col-span-1 bg-[#162032] rounded-[32px] p-[18px_20px] border border-blue-500/10 flex flex-col justify-center h-[140px] md:h-[180px] shadow-xl mt-[-50px] md:mt-[-80px] hover:bg-[#1A263B] transition-colors relative z-20">
               <div className="flex gap-1 mb-3">
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-blue-500 fill-blue-500" />)}
               </div>
