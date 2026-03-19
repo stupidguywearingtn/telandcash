@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, Mail } from 'lucide-react';
+import { ChevronDown, Mail } from 'lucide-react';
 import { Button } from '../ui/Button';
 
 export function FAQ() {
