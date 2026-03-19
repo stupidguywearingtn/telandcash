@@ -39,10 +39,10 @@ export function Hero() {
               Smartphones reconditionnés premium
             </motion.div>
             
-            <motion.h1 variants={item} className="text-5xl md:text-6xl lg:text-[76px] font-black uppercase tracking-tighter text-slate-900 leading-[1.05] mb-6">
-              ACHETEZ VOTRE <br />
-              <span className="text-blue-500">SMARTPHONE</span> <br />
-              AU MEILLEUR <br className="hidden md:block lg:hidden" /> PRIX
+            <motion.h1 variants={item} className="text-4xl md:text-5xl lg:text-[68px] font-black uppercase tracking-tighter text-slate-900 leading-[1.05] mb-6">
+              <span className="whitespace-nowrap">ACHETEZ VOTRE</span> <br />
+              <span className="text-blue-600">SMARTPHONE</span> <br />
+              <span className="whitespace-nowrap">AU MEILLEUR PRIX</span>
             </motion.h1>
             
             <motion.p variants={item} className="text-lg md:text-xl text-slate-500 mb-8 max-w-xl font-medium">
@@ -95,7 +95,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ zIndex: -10 }} />
               
               <img 
-                src="https://www.pngall.com/wp-content/uploads/13/iPhone-14-Pro-Silver-PNG-HD-Image.png" 
+                src="/hero.png" 
                 alt="Smartphones Premium" 
                 className="relative z-10 w-[80%] h-auto object-contain transition-transform duration-700 hover:scale-105 hover:-translate-y-2 drop-shadow-2xl"
                 style={{ filter: 'drop-shadow(0 30px 40px rgba(0,0,0,0.15))' }}

@@ -24,8 +24,8 @@ export function WhyChooseUs() {
               La tech premium à prix juste
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
-              Jusqu'à <span className="text-blue-500 -mt-1 block sm:inline">-70%</span> sur les meilleurs smartphones
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-8 leading-[1.15]">
+              Jusqu'à <span className="text-blue-500"> -70% </span> sur les<br className="hidden sm:block" /> meilleurs smartphones
             </h2>
             
             <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-lg font-medium">

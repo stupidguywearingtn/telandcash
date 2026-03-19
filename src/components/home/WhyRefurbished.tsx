@@ -27,62 +27,74 @@ export function WhyRefurbished() {
             </h2>
             
             <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-xl font-medium leading-relaxed">
-              Un téléphone reconditionné a été collecté, diagnostiqué, réparé si nécessaire, puis testé sur plus de 60 points de contrôle par des techniciens qualifiés. Il est ensuite remis en état et livré avec une garantie officielle de 24 mois — comme un appareil neuf, mais à prix juste.
+              Un téléphone reconditionné a été collecté, diagnostiqué, réparé si nécessaire, puis testé sur plus de 60 points de contrôle par des techniciens qualifiés.
             </p>
 
-            {/* Grid 2x2 Specs */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 w-full border-t border-slate-100 pt-8 mt-2">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                <span className="font-bold text-slate-800 text-[15px]">+60 points de contrôle</span>
+            {/* Premium Grid 2x2 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 flex flex-col gap-3 group hover:border-blue-200 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="font-bold text-slate-900">+60 points</div>
+                  <div className="text-sm text-slate-500">de contrôle effectués</div>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Battery className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                <span className="font-bold text-slate-800 text-[15px]">Batterie certifiée</span>
+
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 flex flex-col gap-3 group hover:border-blue-200 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
+                  <Battery className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="font-bold text-slate-900">Batterie</div>
+                  <div className="text-sm text-slate-500">certifiée +85%</div>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <RefreshCw className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                <span className="font-bold text-slate-800 text-[15px]">Retour 30 jours</span>
+
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 flex flex-col gap-3 group hover:border-blue-200 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
+                  <RefreshCw className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="font-bold text-slate-900">Retour 30j</div>
+                  <div className="text-sm text-slate-500">Satisfait ou remboursé</div>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                <span className="font-bold text-slate-800 text-[15px]">Garantie 24 mois</span>
+
+              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 flex flex-col gap-3 group hover:border-blue-200 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="font-bold text-slate-900">Garantie 24m</div>
+                  <div className="text-sm text-slate-500">Sérénité totale incluse</div>
+                </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column (Image & Floating Badge) */}
+          {/* Right Column (Image with specific focus) */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full max-w-[600px] mx-auto lg:mx-0 lg:ml-auto"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            {/* Main Rounded Image */}
-            <div className="w-full aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl bg-black relative">
+            <div className="rounded-[40px] overflow-hidden shadow-2xl border-[12px] border-slate-100 bg-slate-100">
               <img 
-                src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=1200&q=80" 
-                alt="Smartphone Camera Detail" 
-                className="w-full h-full object-cover opacity-90 object-left-top"
+                src="https://images.unsplash.com/photo-1556656793-08538af09e9d?auto=format&fit=crop&w=1200&q=80" 
+                alt="Refurbished Smartphone" 
+                className="w-full aspect-[4/5] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
-
-            {/* Floating Glassmorphism Badge */}
-            <motion.div 
-              animate={{ y: [0, -8, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -left-6 md:-left-12 -bottom-6 bg-white/70 backdrop-blur-xl border border-white/50 p-4 pr-6 rounded-[24px] shadow-[0_20px_40px_rgba(0,0,0,0.1)] z-20 flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shadow-inner">
-                <Award className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="font-black text-slate-900 text-[17px] leading-tight mb-0.5">Certifié</div>
-                <div className="text-slate-500 text-sm font-medium">60+ tests effectués</div>
-              </div>
-            </motion.div>
+            
+            <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-3xl shadow-2xl max-w-[200px] z-10">
+              <Award className="w-8 h-8 mb-3" />
+              <div className="font-black text-xl leading-tight">Certifié Premium</div>
+              <div className="text-blue-100 text-sm mt-1">Qualité garantie</div>
+            </div>
           </motion.div>
         </div>
       </div>
