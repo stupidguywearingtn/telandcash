@@ -97,7 +97,7 @@ export function Hero() {
               <img 
                 src="/hero.png" 
                 alt="Smartphones Premium" 
-                className="relative z-10 w-[80%] h-auto object-contain transition-transform duration-700 hover:scale-105 hover:-translate-y-2 drop-shadow-2xl"
+                className="relative z-10 w-[70%] h-auto object-contain transition-transform duration-700 hover:scale-[1.5] scale-[1.45] drop-shadow-2xl translate-x-4"
                 style={{ filter: 'drop-shadow(0 30px 40px rgba(0,0,0,0.15))' }}
               />
               
