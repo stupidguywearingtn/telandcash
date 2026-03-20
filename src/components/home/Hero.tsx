@@ -23,14 +23,14 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat"
-          style={{ backgroundPosition: '95% center' }} // Pushed further right per user request
+          style={{ backgroundPosition: 'right center' }} // Pushed to the absolute right
         />
         
         {/* Strictly Localized Overlay - ONLY on the left, ZERO filter on the right */}
-        <div className="absolute inset-y-0 left-0 z-10 w-full lg:w-[55%] bg-gradient-to-r from-white via-white/80 to-transparent" />
+        <div className="absolute inset-y-0 left-0 z-10 w-full lg:w-[45%] bg-gradient-to-r from-white via-white/40 to-transparent" />
         
         {/* Mobile Overlay (more centered/full for readability) */}
-        <div className="absolute inset-0 bg-white/40 lg:hidden z-10" />
+        <div className="absolute inset-0 bg-white/20 lg:hidden z-10" />
       </div>
       
       <div className="container mx-auto px-4 max-w-7xl relative z-20">
