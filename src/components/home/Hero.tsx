@@ -19,11 +19,11 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-      {/* Background Image - Reverted to top-aligned for head visibility */}
+      {/* 100% Original High-Res Background Image - New Subject on Right */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat lg:bg-right-top"
-          style={{ backgroundPosition: '85% 0%' }} 
+          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat"
+          style={{ backgroundPosition: '80% center' }} // Adjusted for the new subject framing
         />
         
         {/* Strictly Localized Overlay - ONLY on the left, ZERO filter on the right */}
