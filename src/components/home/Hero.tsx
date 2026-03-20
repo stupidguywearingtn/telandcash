@@ -19,11 +19,14 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-      {/* 100% Original High-Quality Background Image (PNG) - Natural Right Alignment */}
+      {/* High-Fidelity Hero v4 - Optimized for contrast and sharpness */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-no-repeat"
-          style={{ backgroundPosition: 'right center' }} // Reset to natural right alignment
+          className="absolute inset-0 bg-[url('/hero-bg-v4.png')] bg-cover bg-no-repeat"
+          style={{ 
+            backgroundPosition: 'right center',
+            imageRendering: '-webkit-optimize-contrast' // Boost contrast and sharpness
+          }}
         />
         
         {/* Strictly Localized Overlay - ONLY on the left 45% */}
