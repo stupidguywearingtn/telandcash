@@ -18,18 +18,24 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-50">
-      {/* Background Image with Subject on Right */}
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
+      {/* Background Image with Subject on Right - Adjusted position for full face visibility */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat bg-right lg:bg-right-top"
-          style={{ backgroundPosition: '85% center' }}
+          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat lg:bg-right-top"
+          style={{ backgroundPosition: '85% 0%' }} // Forced to top to keep heads/eyes visible
         />
-        {/* Gradient Overlay for Readability (White to Transparent) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent md:via-white/80" />
+        
+        {/* Refined Gradient Overlay for optimal readability and image clarity */}
+        <div className="absolute inset-0 z-10">
+          {/* Solid base for text on the far left */}
+          <div className="absolute inset-y-0 left-0 w-full sm:w-1/3 bg-white" />
+          {/* Smooth transition from solid white to transparent */}
+          <div className="absolute inset-y-0 left-0 sm:left-1/3 w-full sm:w-2/3 bg-gradient-to-r from-white via-white/50 to-transparent" />
+        </div>
       </div>
       
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 max-w-7xl relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           <motion.div 
