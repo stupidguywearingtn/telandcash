@@ -19,19 +19,22 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-      {/* Background Image with Subject on Right - Adjusted position for full face visibility */}
+      {/* 100% Original High-Res Background Image - No filters, no opacity reduction */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat lg:bg-right-top"
-          style={{ backgroundPosition: '85% 0%' }} // Forced to top to keep heads/eyes visible
+          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat"
+          style={{ backgroundPosition: 'center right' }}
         />
         
-        {/* Refined Gradient Overlay for optimal readability and image clarity */}
+        {/* Strictly Localized Overlay - ONLY on the left, fading to ZERO before the subject */}
         <div className="absolute inset-0 z-10">
-          {/* Solid base for text on the far left */}
-          <div className="absolute inset-y-0 left-0 w-full sm:w-1/3 bg-white" />
-          {/* Smooth transition from solid white to transparent */}
-          <div className="absolute inset-y-0 left-0 sm:left-1/3 w-full sm:w-2/3 bg-gradient-to-r from-white via-white/50 to-transparent" />
+          {/* Base solid white for text readability (left 35%) */}
+          <div className="absolute inset-y-0 left-0 w-[40%] bg-white hidden lg:block" />
+          {/* Smooth transition from solid white to 100% transparent (ending at 65%) */}
+          <div className="absolute inset-y-0 left-0 lg:left-[40%] w-full lg:w-[25%] bg-gradient-to-r from-white to-transparent" />
+          
+          {/* Mobile Overlay (more centered/full for readability) */}
+          <div className="absolute inset-0 bg-white/60 lg:hidden" />
         </div>
       </div>
       
@@ -65,7 +68,7 @@ export function Hero() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="bg-white/40 backdrop-blur-xl px-4 py-2.5 rounded-[12px] shadow-[0_8px_32px_rgba(37,99,235,0.15)] border border-white/20 flex items-center gap-2.5"
+                  className="bg-white/60 backdrop-blur-xl px-4 py-2.5 rounded-[12px] shadow-[0_8px_32px_rgba(37,99,235,0.1)] border border-white/20 flex items-center gap-2.5"
                 >
                    <Shield className="w-4 h-4 text-[#2563eb]" />
                    <span className="text-xs font-medium text-[#1e3a5f] whitespace-nowrap">Batterie testée +85%</span>
@@ -75,7 +78,7 @@ export function Hero() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
-                  className="bg-white/40 backdrop-blur-xl px-4 py-2.5 rounded-[12px] shadow-[0_8px_32px_rgba(37,99,235,0.15)] border border-white/20 flex items-center gap-2.5"
+                  className="bg-white/60 backdrop-blur-xl px-4 py-2.5 rounded-[12px] shadow-[0_8px_32px_rgba(37,99,235,0.1)] border border-white/20 flex items-center gap-2.5"
                 >
                    <CheckCircle2 className="w-4 h-4 text-[#2563eb]" />
                    <span className="text-xs font-medium text-[#1e3a5f] whitespace-nowrap">Garantie 24 mois</span>
@@ -101,7 +104,7 @@ export function Hero() {
             </motion.div>
 
             {/* Trust Bar */}
-            <motion.div variants={item} className="flex flex-wrap items-center justify-start gap-x-6 gap-y-3 text-sm font-medium text-slate-500 bg-white/20 backdrop-blur-md p-4 rounded-2xl border border-white/30">
+            <motion.div variants={item} className="flex flex-wrap items-center justify-start gap-x-6 gap-y-3 text-sm font-medium text-slate-500 bg-white/40 backdrop-blur-md p-4 rounded-2xl border border-white/30">
               <div className="flex items-center gap-1.5">
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 <span>4.9/5 Avis</span>
