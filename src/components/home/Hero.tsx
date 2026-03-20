@@ -19,23 +19,18 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-      {/* 100% Original High-Res Background Image - No filters, no opacity reduction */}
+      {/* Background Image - Reverted to top-aligned for head visibility */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat"
-          style={{ backgroundPosition: 'center right' }}
+          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat lg:bg-right-top"
+          style={{ backgroundPosition: '85% 0%' }} 
         />
         
-        {/* Strictly Localized Overlay - ONLY on the left, fading to ZERO before the subject */}
-        <div className="absolute inset-0 z-10">
-          {/* Base solid white for text readability (left 35%) */}
-          <div className="absolute inset-y-0 left-0 w-[40%] bg-white hidden lg:block" />
-          {/* Smooth transition from solid white to 100% transparent (ending at 65%) */}
-          <div className="absolute inset-y-0 left-0 lg:left-[40%] w-full lg:w-[25%] bg-gradient-to-r from-white to-transparent" />
-          
-          {/* Mobile Overlay (more centered/full for readability) */}
-          <div className="absolute inset-0 bg-white/60 lg:hidden" />
-        </div>
+        {/* Strictly Localized Overlay - ONLY on the left, ZERO filter on the right */}
+        <div className="absolute inset-y-0 left-0 z-10 w-full lg:w-[55%] bg-gradient-to-r from-white via-white/80 to-transparent" />
+        
+        {/* Mobile Overlay (more centered/full for readability) */}
+        <div className="absolute inset-0 bg-white/40 lg:hidden z-10" />
       </div>
       
       <div className="container mx-auto px-4 max-w-7xl relative z-20">
