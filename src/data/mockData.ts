@@ -21,7 +21,7 @@ export const mockProducts: Product[] = [
     grade: 'A',
     price: 649,
     originalPrice: 899,
-    image: 'https://www.pngall.com/wp-content/uploads/13/iPhone-14-Pro-Max-PNG.png',
+    image: '/products/iphone-13-pro-blue.png',
     badges: ['Best seller', 'Promo'],
     color: 'Bleu',
     battery: '100%'
