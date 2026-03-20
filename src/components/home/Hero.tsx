@@ -19,12 +19,12 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-      {/* High-Fidelity Hero v5 - Optimized Asset Switch */}
+      {/* FINAL High-Fidelity Hero - 2MB Asset with Head Visibility Priority */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/hero-bg-v5.jpg')] bg-cover bg-no-repeat"
+          className="absolute inset-0 bg-[url('/hero-final.jpg')] bg-cover bg-no-repeat"
           style={{ 
-            backgroundPosition: 'right center',
+            backgroundPosition: 'center 15%', // Prioritize head visibility (top 15% anchor)
             imageRendering: '-webkit-optimize-contrast'
           }}
         />
