@@ -19,13 +19,13 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-      {/* High-Fidelity Hero v4 - Optimized for contrast and sharpness */}
+      {/* High-Fidelity Hero v5 - Optimized Asset Switch */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/hero-bg-v4.png')] bg-cover bg-no-repeat"
+          className="absolute inset-0 bg-[url('/hero-bg-v5.jpg')] bg-cover bg-no-repeat"
           style={{ 
             backgroundPosition: 'right center',
-            imageRendering: '-webkit-optimize-contrast' // Boost contrast and sharpness
+            imageRendering: '-webkit-optimize-contrast'
           }}
         />
         
