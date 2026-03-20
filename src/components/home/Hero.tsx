@@ -18,18 +18,25 @@ export function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-hero pt-20 pb-24 md:pt-32 md:pb-32 bg-slate-50">
-      {/* Background Decorative Blur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl -z-10" />
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-50">
+      {/* Background Image with Subject on Right */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat bg-right lg:bg-right-top"
+          style={{ backgroundPosition: '85% center' }}
+        />
+        {/* Gradient Overlay for Readability (White to Transparent) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent md:via-white/80" />
+      </div>
       
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           <motion.div 
             variants={container}
             initial="hidden"
             animate="show"
-            className="flex flex-col items-start text-left z-10"
+            className="flex flex-col items-start text-left py-12 md:py-20"
           >
             <motion.div variants={item} className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-600 border border-blue-100">
               <span className="relative flex h-2 w-2 mr-2">
@@ -39,13 +46,38 @@ export function Hero() {
               Smartphones reconditionnés premium
             </motion.div>
             
-            <motion.h1 variants={item} className="text-4xl md:text-5xl lg:text-[68px] font-black uppercase tracking-tighter text-slate-900 leading-[1.05] mb-6">
-              <span className="whitespace-nowrap">ACHETEZ VOTRE</span> <br />
-              <span className="text-blue-600">SMARTPHONE</span> <br />
-              <span className="whitespace-nowrap">AU MEILLEUR PRIX</span>
-            </motion.h1>
+            <div className="relative mb-6">
+              <motion.h1 variants={item} className="text-4xl md:text-5xl lg:text-[64px] font-black uppercase tracking-tighter text-slate-900 leading-[1.05]">
+                <span className="whitespace-nowrap">ACHETEZ VOTRE</span> <br />
+                <span className="text-blue-600">SMARTPHONE</span> <br />
+                <span className="whitespace-nowrap">AU MEILLEUR PRIX</span>
+              </motion.h1>
+
+              {/* Repositioned Badges near Title */}
+              <div className="absolute -right-4 top-0 hidden xl:flex flex-col gap-3 translate-x-full">
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="bg-white/40 backdrop-blur-xl px-4 py-2.5 rounded-[12px] shadow-[0_8px_32px_rgba(37,99,235,0.15)] border border-white/20 flex items-center gap-2.5"
+                >
+                   <Shield className="w-4 h-4 text-[#2563eb]" />
+                   <span className="text-xs font-medium text-[#1e3a5f] whitespace-nowrap">Batterie testée +85%</span>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                  className="bg-white/40 backdrop-blur-xl px-4 py-2.5 rounded-[12px] shadow-[0_8px_32px_rgba(37,99,235,0.15)] border border-white/20 flex items-center gap-2.5"
+                >
+                   <CheckCircle2 className="w-4 h-4 text-[#2563eb]" />
+                   <span className="text-xs font-medium text-[#1e3a5f] whitespace-nowrap">Garantie 24 mois</span>
+                </motion.div>
+              </div>
+            </div>
             
-            <motion.p variants={item} className="text-lg md:text-xl text-slate-500 mb-8 max-w-xl font-medium">
+            <motion.p variants={item} className="text-lg md:text-xl text-slate-600 mb-8 max-w-lg font-medium">
               iPhone, Samsung & Xiaomi • Testés & certifiés en France • Garantis 24 mois
             </motion.p>
             
@@ -56,14 +88,14 @@ export function Hero() {
                 </Button>
               </Link>
               <Link to="/catalogue?sort=promo">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto text-lg h-14 px-8 rounded-full bg-white border-slate-200 text-slate-700 hover:bg-slate-50">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto text-lg h-14 px-8 rounded-full bg-white/50 backdrop-blur-sm border-slate-200 text-slate-700 hover:bg-white/80">
                   Nos meilleures offres
                 </Button>
               </Link>
             </motion.div>
 
             {/* Trust Bar */}
-            <motion.div variants={item} className="flex flex-wrap items-center justify-start gap-x-6 gap-y-3 text-sm font-medium text-slate-500">
+            <motion.div variants={item} className="flex flex-wrap items-center justify-start gap-x-6 gap-y-3 text-sm font-medium text-slate-500 bg-white/20 backdrop-blur-md p-4 rounded-2xl border border-white/30">
               <div className="flex items-center gap-1.5">
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 <span>4.9/5 Avis</span>
@@ -83,46 +115,8 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
-            className="relative hidden lg:block"
-          >
-            {/* Main Hero Image */}
-            <div className="relative w-full aspect-square max-w-[550px] ml-auto flex items-center justify-center">
-              
-              <div className="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ zIndex: -10 }} />
-              
-              <img 
-                src="/hero.png" 
-                alt="Smartphones Premium" 
-                className="relative z-10 w-[60%] h-auto object-contain transition-transform duration-700 hover:scale-[2.1] scale-[2.0] drop-shadow-2xl translate-x-8"
-                style={{ filter: 'drop-shadow(0 30px 40px rgba(0,0,0,0.15))' }}
-              />
-              
-              {/* Floating badges */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute right-[-40px] top-32 bg-white/40 backdrop-blur-xl px-5 py-3 rounded-[14px] shadow-[0_8px_32px_rgba(37,99,235,0.2)] border border-white/20 z-50 flex items-center gap-3"
-              >
-                 <Shield className="w-5 h-5 text-[#2563eb]" />
-                 <span className="text-[13px] md:text-sm font-medium text-[#1e3a5f] whitespace-nowrap">Batterie testée +85%</span>
-              </motion.div>
-
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute left-0 bottom-40 bg-white/40 backdrop-blur-xl px-5 py-3 rounded-[14px] shadow-[0_8px_32px_rgba(37,99,235,0.2)] border border-white/20 z-50 flex items-center gap-3"
-              >
-                 <CheckCircle2 className="w-5 h-5 text-[#2563eb]" />
-                 <span className="text-[13px] md:text-sm font-medium text-[#1e3a5f] whitespace-nowrap">Garantie 24 mois</span>
-              </motion.div>
-            </div>
-          </motion.div>
+          {/* Right Spacer for background visibility */}
+          <div className="hidden lg:block h-1" />
         </div>
       </div>
     </section>
