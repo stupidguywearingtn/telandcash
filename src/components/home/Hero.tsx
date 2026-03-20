@@ -19,18 +19,15 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-      {/* 100% Original High-Res Background Image - Subject Pushed to Far Right */}
+      {/* 100% Original High-Res Background Image - Subject Force-Pushed to the Edge */}
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat"
-          style={{ backgroundPosition: 'right center' }} // Pushed to the absolute right
+          style={{ backgroundPosition: '140% center' }} // Forced offset to move centered subject to the far right
         />
         
-        {/* Strictly Localized Overlay - ONLY on the left, ZERO filter on the right */}
-        <div className="absolute inset-y-0 left-0 z-10 w-full lg:w-[45%] bg-gradient-to-r from-white via-white/40 to-transparent" />
-        
-        {/* Mobile Overlay (more centered/full for readability) */}
-        <div className="absolute inset-0 bg-white/20 lg:hidden z-10" />
+        {/* Strictly Localized Overlay - ONLY on the left 40% */}
+        <div className="absolute inset-y-0 left-0 z-10 w-full lg:w-[45%] bg-gradient-to-r from-white to-transparent" />
       </div>
       
       <div className="container mx-auto px-4 max-w-7xl relative z-20">
