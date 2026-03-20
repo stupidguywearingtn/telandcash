@@ -19,14 +19,14 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-      {/* 100% Original High-Res Background Image - Subject Force-Pushed to the Edge */}
+      {/* 100% Original High-Quality Background Image (PNG) - Natural Right Alignment */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat"
-          style={{ backgroundPosition: '140% center' }} // Forced offset to move centered subject to the far right
+          className="absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-no-repeat"
+          style={{ backgroundPosition: 'right center' }} // Reset to natural right alignment
         />
         
-        {/* Strictly Localized Overlay - ONLY on the left 40% */}
+        {/* Strictly Localized Overlay - ONLY on the left 45% */}
         <div className="absolute inset-y-0 left-0 z-10 w-full lg:w-[45%] bg-gradient-to-r from-white to-transparent" />
       </div>
       
