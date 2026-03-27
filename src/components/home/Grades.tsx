@@ -1,44 +1,81 @@
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '../ui/Card';
-import { ShieldCheck, CheckCircle2, Battery, Smartphone } from 'lucide-react';
+import { Check, Battery, Eye, Zap, Star } from 'lucide-react';
 
 export function Grades() {
   const grades = [
     {
-      title: "Grade A",
-      subtitle: "Parfait état",
-      icon: <CheckCircle2 className="w-8 h-8 text-blue-500" />,
+      badge: "BESTSELLER",
+      letter: "A",
+      title: "Parfait État",
+      subtitle: "PREMIUM",
       features: [
-        { text: "Parfait état esthétique", icon: <Smartphone className="w-5 h-5 text-slate-500" /> },
-        { text: "Aucune trace rayure", icon: <CheckCircle2 className="w-5 h-5 text-slate-500" /> },
-        { text: "Batterie +85%", icon: <Battery className="w-5 h-5 text-slate-500" /> },
+        "Écran 100% intact, aucune rayure",
+        "Coque impeccable sans aucun choc",
+        "Composants d'origine certifiés",
+        "Connectique testée et nettoyée",
+        "Libre tout opérateur",
+        "Garantie 24 mois incluse"
       ],
-      color: "border-blue-500",
-      bgHover: "hover:shadow-blue-500/10 hover:border-blue-200"
+      stats: {
+        battery: "100%",
+        scratches: "Aucune",
+        functional: "100%"
+      },
+      quote: `"L'expérience du neuf au prix du reconditionné."`,
+      letterBg: "bg-blue-100/60",
+      letterColor: "text-blue-600",
+      borderColor: "border-blue-500",
+      subtitleColor: "text-blue-600",
+      badgeBg: "bg-slate-800",
+      checkColor: "text-blue-500"
     },
     {
-      title: "Grade B",
-      subtitle: "Très bon état",
-      icon: <ShieldCheck className="w-8 h-8 text-slate-700" />,
+      letter: "B",
+      title: "Très Bon État",
+      subtitle: "OPTIMAL",
       features: [
-        { text: "Très bon état général", icon: <Smartphone className="w-5 h-5 text-slate-500" /> },
-        { text: "Légères traces d'usure", icon: <ShieldCheck className="w-5 h-5 text-slate-500" /> },
-        { text: "Batterie +85%", icon: <Battery className="w-5 h-5 text-slate-500" /> },
+        "Écran en excellent état",
+        "Micro-rayures invisibles à 20cm",
+        "Composants entièrement testés",
+        "Connectique 100% fonctionnelle",
+        "Libre tout opérateur",
+        "Garantie 12 mois incluse"
       ],
-      color: "border-slate-300",
-      bgHover: "hover:shadow-slate-500/10 hover:border-slate-300"
+      stats: {
+        battery: "≥85%",
+        scratches: "Légères",
+        functional: "100%"
+      },
+      quote: `"Le meilleur compromis qualité/prix."`,
+      letterBg: "bg-emerald-100/60",
+      letterColor: "text-emerald-600",
+      borderColor: "border-emerald-400/50",
+      subtitleColor: "text-emerald-600",
+      checkColor: "text-emerald-500"
     },
     {
-      title: "Grade C",
-      subtitle: "État correct",
-      icon: <ShieldCheck className="w-8 h-8 text-slate-400" />,
+      letter: "C",
+      title: "État Correct",
+      subtitle: "ESSENTIEL",
       features: [
-        { text: "État correct fonctionnel", icon: <Smartphone className="w-5 h-5 text-slate-500" /> },
-        { text: "Marques visibles sur coque", icon: <ShieldCheck className="w-5 h-5 text-slate-500" /> },
-        { text: "Batterie +85%", icon: <Battery className="w-5 h-5 text-slate-500" /> },
+        "Écran avec micro-rayures",
+        "Traces d'usure sur la coque",
+        "100% testé et approuvé",
+        "Toutes fonctionnalités opérationnelles",
+        "Libre tout opérateur",
+        "Garantie 12 mois incluse"
       ],
-      color: "border-slate-200",
-      bgHover: "hover:shadow-slate-500/5 hover:border-slate-200"
+      stats: {
+        battery: "≥80%",
+        scratches: "Visibles",
+        functional: "100%"
+      },
+      quote: `"Idéal pour les petits budgets."`,
+      letterBg: "bg-orange-100/60",
+      letterColor: "text-orange-500",
+      borderColor: "border-slate-200",
+      subtitleColor: "text-orange-500",
+      checkColor: "text-orange-500"
     }
   ];
 
@@ -65,7 +102,7 @@ export function Grades() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {grades.map((grade, index) => (
             <motion.div
               key={index}
@@ -74,30 +111,58 @@ export function Grades() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
             >
-              <Card className={`h-full bg-white rounded-3xl border ${grade.color} shadow-sm transition-all duration-300 transform hover:-translate-y-2 ${grade.bgHover} hover:shadow-2xl overflow-hidden`}>
-                <CardContent className="p-8 md:p-10">
-                  <div className="flex flex-col items-center text-center gap-4 mb-8">
-                    <div className="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100 shadow-sm">
-                      {grade.icon}
+              <div className={`relative h-full bg-white rounded-3xl border-2 ${grade.borderColor} shadow-sm overflow-visible`}>
+                {grade.badge && (
+                  <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 ${grade.badgeBg} text-white text-[11px] font-black tracking-wide uppercase rounded-full flex items-center gap-1.5 shadow-md border border-slate-700 z-10 whitespace-nowrap`}>
+                    <Star className="w-3.5 h-3.5 fill-current" />
+                    {grade.badge}
+                  </div>
+                )}
+                
+                <div className="p-8 flex flex-col h-full bg-[#f8fafc]/50 rounded-3xl">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className={`w-14 h-14 rounded-2xl ${grade.letterBg} flex items-center justify-center flex-shrink-0`}>
+                      <span className={`text-2xl font-black ${grade.letterColor}`}>{grade.letter}</span>
                     </div>
                     <div>
-                      <h3 className="text-2xl font-black text-slate-900 tracking-tight">{grade.title}</h3>
-                      <p className="font-semibold text-blue-600 uppercase tracking-widest text-sm mt-1">{grade.subtitle}</p>
+                      <h3 className="text-xl font-bold text-slate-900 tracking-tight">{grade.title}</h3>
+                      <p className={`text-[10px] font-black tracking-widest uppercase mt-1 ${grade.subtitleColor}`}>{grade.subtitle}</p>
                     </div>
                   </div>
                   
-                  <div className="space-y-4 bg-slate-50/50 rounded-2xl p-6 border border-slate-50">
+                  <div className="space-y-4 flex-grow">
                     {grade.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <div className="flex-shrink-0">
-                          {feature.icon}
-                        </div>
-                        <span className="font-semibold text-slate-700 text-[15px]">{feature.text}</span>
+                      <div key={idx} className="flex items-start gap-3">
+                        <Check className={`w-[18px] h-[18px] flex-shrink-0 mt-[3px] ${grade.checkColor}`} strokeWidth={3} />
+                        <span className="text-slate-600 text-sm font-medium leading-tight">{feature}</span>
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+
+                  <div className="mt-10 pt-6 border-t border-slate-200">
+                    <div className="grid grid-cols-3 gap-2 mb-6">
+                      <div className="flex flex-col items-center text-center">
+                        <Battery className="w-5 h-5 text-slate-400 mb-2" strokeWidth={1.5} />
+                        <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest mb-1">Batterie</span>
+                        <span className="text-sm font-bold text-slate-900">{grade.stats.battery}</span>
+                      </div>
+                      <div className="flex flex-col items-center text-center">
+                        <Eye className="w-5 h-5 text-slate-400 mb-2" strokeWidth={1.5} />
+                        <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest mb-1">Rayures</span>
+                        <span className="text-sm font-bold text-slate-900">{grade.stats.scratches}</span>
+                      </div>
+                      <div className="flex flex-col items-center text-center">
+                        <Zap className="w-5 h-5 text-slate-400 mb-2" strokeWidth={1.5} />
+                        <span className="text-[9px] text-slate-500 uppercase font-black tracking-widest mb-1">Fonctionnel</span>
+                        <span className="text-sm font-bold text-slate-900">{grade.stats.functional}</span>
+                      </div>
+                    </div>
+                    <div className="text-center italic text-slate-500 text-[13px] font-medium leading-relaxed">
+                      {grade.quote}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
