@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
-import { ArrowRight, ShieldCheck, Tag } from 'lucide-react';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function WhyChooseUs() {
@@ -9,6 +9,22 @@ export function WhyChooseUs() {
       {/* Abstract Background Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2563EB]/15 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3" />
       
+      {/* Decorative Dots framing the workspace */}
+      <svg className="absolute top-12 left-12 w-20 h-20 opacity-30" viewBox="0 0 100 100">
+        <circle cx="10" cy="10" r="2" fill="#3b82f6"/>
+        <circle cx="30" cy="10" r="2" fill="#3b82f6"/>
+        <circle cx="50" cy="10" r="2" fill="#3b82f6"/>
+        <circle cx="10" cy="30" r="2" fill="#3b82f6"/>
+        <circle cx="10" cy="50" r="2" fill="#3b82f6"/>
+      </svg>
+      <svg className="absolute bottom-12 right-12 w-20 h-20 opacity-30 transform rotate-180" viewBox="0 0 100 100">
+        <circle cx="10" cy="10" r="2" fill="#3b82f6"/>
+        <circle cx="30" cy="10" r="2" fill="#3b82f6"/>
+        <circle cx="50" cy="10" r="2" fill="#3b82f6"/>
+        <circle cx="10" cy="30" r="2" fill="#3b82f6"/>
+        <circle cx="10" cy="50" r="2" fill="#3b82f6"/>
+      </svg>
+
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           
@@ -20,27 +36,38 @@ export function WhyChooseUs() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-start relative relative"
           >
-            {/* Cursive annotation */}
-            <div className="text-[#3b82f6] font-['Caveat'] text-2xl md:text-3xl -rotate-2 mb-3 ml-1 relative">
-              le choix intelligent
+            {/* Cursive annotation + Sparkle */}
+            <div className="flex items-center gap-2 mb-3 ml-1">
+              <div className="text-[#3b82f6] font-['Caveat'] text-2xl md:text-3xl -rotate-2">
+                le choix intelligent
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" className="stroke-[#3b82f6] fill-none stroke-[1.5px] opacity-80 animate-pulse">
+                <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10Z"/>
+              </svg>
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-[52px] font-black tracking-tight mb-8 leading-[1.1] relative">
               Jusqu'à <span className="text-[#3b82f6] relative inline-block">
                 -70%
-                {/* Hand-drawn arrow pointing to -70% */}
-                <svg width="60" height="60" viewBox="0 0 60 60" className="absolute -top-12 -right-8 stroke-[#3b82f6] fill-none stroke-2 opacity-80" style={{strokeLinecap: 'round'}}>
-                  <path d="M 50 10 Q 30 5 10 25 M 10 25 L 20 20 M 10 25 L 15 35" />
+                {/* Hand-drawn elegant curved arrow pointing to -70% */}
+                <svg width="60" height="60" viewBox="0 0 60 60" className="absolute -top-10 -right-14 stroke-[#3b82f6] fill-none stroke-2 opacity-80" style={{strokeLinecap: 'round', strokeLinejoin: 'round'}}>
+                  <path d="M 50 10 Q 35 5 10 25 M 10 25 L 20 18 M 10 25 L 12 35" />
                 </svg>
               </span><br />
-              sur les meilleurs smartphones
+              sur les <span className="relative">
+                meilleurs smartphones
+                {/* Wavy Underline */}
+                <svg viewBox="0 0 100 20" preserveAspectRatio="none" className="absolute -bottom-4 left-0 w-full h-4 stroke-[#3b82f6] fill-none stroke-[2px] opacity-70" style={{strokeLinecap: 'round'}}>
+                  <path d="M 0 10 Q 12 0 25 10 T 50 10 T 75 10 T 100 10"/>
+                </svg>
+              </span>
             </h2>
             
-            <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-lg font-medium leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-400 mt-4 mb-12 max-w-lg font-medium leading-relaxed">
               Ne choisissez plus entre qualité et prix. Profitez de la même expérience qu'un appareil neuf, avec une garantie totale et un prix qui a enfin du sens.
             </p>
 
-            {/* Structured Stats Row - Clean, Legible, Unambiguous */}
+            {/* Structured Stats Row */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full mb-12 border-l-2 sm:border-l-0 border-[#3b82f6]/30 pl-6 sm:pl-0 sm:border-t sm:border-white/10 sm:pt-10">
               <div className="flex flex-col leading-tight">
                 <div className="text-3xl md:text-4xl font-black text-white mb-2">500K</div>
@@ -57,8 +84,7 @@ export function WhyChooseUs() {
             </div>
 
             <div className="relative">
-              {/* Little sparkle drawing near the CTA */}
-              <svg width="40" height="40" viewBox="0 0 40 40" className="absolute -top-4 -right-10 stroke-[#3b82f6] fill-none stroke-2 opacity-80 animate-pulse" style={{strokeLinecap: 'round'}}>
+              <svg width="40" height="40" viewBox="0 0 40 40" className="absolute -top-4 -right-10 stroke-[#3b82f6] fill-none stroke-[2px] opacity-60 animate-pulse" style={{strokeLinecap: 'round'}}>
                 <path d="M 20 5 L 20 15 M 20 25 L 20 35 M 5 20 L 15 20 M 25 20 L 35 20 M 10 10 L 16 16 M 24 24 L 30 30 M 10 30 L 16 24 M 24 16 L 30 10" />
               </svg>
               
@@ -71,7 +97,7 @@ export function WhyChooseUs() {
             </div>
           </motion.div>
 
-          {/* Right Column (Staging without cropped badges) */}
+          {/* Right Column (Staging) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -79,16 +105,14 @@ export function WhyChooseUs() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex justify-center items-center p-4 md:p-8"
           >
-            {/* The Visual Stage (Dark, sleek, premium) */}
+            {/* The Visual Stage */}
             <div className="relative w-full max-w-[460px] aspect-[4/5] rounded-[2.5rem] bg-gradient-to-tr from-[#1E293B]/40 to-[#0F172A]/80 border border-white/10 shadow-2xl flex items-center justify-center p-12 overflow-visible">
               
-              {/* Central Glowing Phone Mockup, slightly tilted */}
               <motion.div 
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-full"
+                className="relative w-full z-10"
               >
-                {/* Ambient glow behind phone */}
                 <div className="absolute inset-0 bg-[#3b82f6] blur-[80px] opacity-20 transform scale-75" />
                 <img 
                   src="https://www.pngmart.com/files/22/iPhone-14-Pro-PNG-Isolated-HD.png"
@@ -97,7 +121,7 @@ export function WhyChooseUs() {
                 />
               </motion.div>
 
-              {/* Badges - Kept fully inside or overlapping safely */}
+              {/* Warranty Badge */}
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -108,21 +132,22 @@ export function WhyChooseUs() {
                   <ShieldCheck className="w-4 h-4 text-[#3b82f6]" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-bold text-white text-sm">Garantie 24m</span>
+                  <span className="font-bold text-white text-sm">Garantie 24 mois</span>
                   <span className="text-white/60 text-[10px] tracking-wider uppercase font-semibold">Incluse</span>
                 </div>
               </motion.div>
 
+              {/* Pricing Badge (Redesigned) */}
               <motion.div 
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="absolute bottom-12 -right-6 md:-right-8 bg-[#3b82f6] rounded-2xl px-6 py-4 shadow-[0_15px_35px_rgba(59,130,246,0.3)] z-20 flex items-center gap-4"
+                className="absolute bottom-8 -right-6 md:-right-10 bg-white rounded-3xl p-5 shadow-[0_15px_40px_rgba(0,0,0,0.4)] z-20 flex flex-col items-start min-w-[160px] border border-slate-100/5"
               >
-                <Tag className="w-6 h-6 text-white" />
-                <div className="flex flex-col leading-tight">
-                  <span className="text-white/80 text-xs font-bold uppercase tracking-wider line-through decoration-white/50">859€ Neuf</span>
-                  <span className="font-black text-white text-2xl">499€</span>
+                <span className="text-slate-400 text-sm font-bold line-through decoration-slate-300 mb-0.5">859€ Neuf</span>
+                <span className="font-black text-slate-900 text-4xl mb-3 tracking-tight">499€</span>
+                <div className="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold w-full text-center">
+                  Tu économises 360€
                 </div>
               </motion.div>
 

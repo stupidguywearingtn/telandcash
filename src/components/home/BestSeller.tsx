@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 export function BestSeller() {
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-[#FAFAFA] to-white relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex flex-col mb-12 items-center text-center">
+        <div className="flex flex-col mb-12 items-center text-center relative">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -21,16 +21,16 @@ export function BestSeller() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-slate-500 max-w-2xl font-medium"
+            className="text-lg text-slate-600 max-w-2xl font-medium"
           >
-            Notre modèle le plus plebiscité. Performance brute et design intemporel, reconditionné à la perfection dans nos locaux.
+            Notre modèle le plus plébiscité. Performance brute et design intemporel, reconditionné à la perfection dans nos locaux.
           </motion.p>
         </div>
 
-        <div className="rounded-[32px] p-6 md:p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center relative overflow-visible border border-slate-100 shadow-sm bg-white">
+        <div className="rounded-[32px] p-6 md:p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center relative overflow-visible border border-slate-200/60 shadow-md bg-white">
           
           {/* Subtle Abstract Background */}
-          <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-slate-100/60 blur-[100px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-blue-100/50 blur-[100px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2" />
 
           {/* Left: Product Visual */}
           <motion.div 
@@ -39,7 +39,6 @@ export function BestSeller() {
             viewport={{ once: true }}
             className="relative flex justify-center items-center h-full min-h-[350px] lg:min-h-[450px]"
           >
-            {/* The iPhone 13 / 14 Midnight aesthetic */}
             <motion.img 
               initial={{ y: 20 }}
               whileInView={{ y: 0 }}
@@ -57,25 +56,40 @@ export function BestSeller() {
             viewport={{ once: true }}
             className="flex flex-col items-start relative z-10"
           >
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] font-bold text-[11px] tracking-widest uppercase mb-5">
-              ✦ Notre best-seller
+            <div className="relative mb-5">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] font-bold text-[11px] tracking-widest uppercase">
+                ✦ notre best-seller
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" className="absolute -top-3 -right-5 stroke-yellow-400 fill-none stroke-[1.5px] opacity-100 hidden sm:block">
+                <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10Z"/>
+              </svg>
             </div>
             
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-3 tracking-tight">iPhone 14 Pro</h3>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight relative">
+              iPhone 14 Pro
+              {/* Wavy Underline */}
+              <svg viewBox="0 0 100 20" preserveAspectRatio="none" className="absolute -bottom-3 left-0 w-[140px] h-3 stroke-[#3b82f6] fill-none stroke-[2px] opacity-70" style={{strokeLinecap: 'round'}}>
+                <path d="M 0 10 Q 12 0 25 10 T 50 10 T 75 10 T 100 10"/>
+              </svg>
+            </h3>
             
-            <p className="text-base text-slate-600 font-medium mb-6 leading-relaxed max-w-md">
-              L'alliance parfaite entre puissance photographique et fluidité absolue. Un véritable bijou technologique, testé sur tous les points et prêt à vous accompagner partout.
+            <p className="text-sm md:text-base text-slate-600 font-medium mb-6 leading-relaxed max-w-md">
+              Appareil photo stellaire 48 Mpx, autonomie longue durée et résistance à l'eau. Un bijou technologique totalement prêt à vous accompagner partout.
             </p>
 
-            {/* Price */}
-            <div className="flex items-baseline gap-3 mb-6">
-              <span className="text-3xl md:text-4xl font-black text-slate-900">849€</span>
+            {/* Price with Hand-drawn arrow */}
+            <div className="flex items-baseline gap-3 mb-6 relative">
+              <span className="text-3xl md:text-4xl font-black text-[#3b82f6]">849€</span>
               <span className="text-sm text-slate-400 font-medium tracking-wide">au lieu de <span className="line-through">1199€</span></span>
+              
+              <svg width="40" height="40" viewBox="0 0 50 50" className="absolute -top-8 left-16 md:left-20 stroke-[#3b82f6] fill-none stroke-[2px] opacity-80 -rotate-[15deg] hidden sm:block" style={{strokeLinecap: 'round', strokeLinejoin: 'round'}}>
+                <path d="M 5 5 Q 30 5 35 30" />
+                <path d="M 25 30 L 35 30 L 35 20" />
+              </svg>
             </div>
 
             {/* Selectors */}
             <div className="flex gap-10 w-full mb-8">
-              {/* Color */}
               <div className="flex flex-col gap-2.5">
                 <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Finition</span>
                 <div className="flex gap-2.5">
@@ -85,7 +99,6 @@ export function BestSeller() {
                 </div>
               </div>
 
-              {/* Storage */}
               <div className="flex flex-col gap-2.5">
                 <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Stockage</span>
                 <div className="flex gap-4">
@@ -95,20 +108,21 @@ export function BestSeller() {
               </div>
             </div>
 
-            {/* 3 Highlight Pills */}
+            {/* Feature Pills */}
             <div className="flex flex-wrap gap-2 mb-6">
-              <div className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">Face ID</div>
-              <div className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">5G</div>
-              <div className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">Écran OLED</div>
+              <div className="px-3 py-1 bg-white border border-slate-200 text-slate-700 text-xs font-bold rounded-md shadow-sm">5G</div>
+              <div className="px-3 py-1 bg-white border border-slate-200 text-slate-700 text-xs font-bold rounded-md shadow-sm">Écran OLED</div>
+              <div className="px-3 py-1 bg-white border border-slate-200 text-slate-700 text-xs font-bold rounded-md shadow-sm">Charge rapide</div>
+              <div className="px-3 py-1 bg-white border border-slate-200 text-slate-700 text-xs font-bold rounded-md shadow-sm">Double SIM</div>
             </div>
 
             {/* Ce qui est inclus */}
-            <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 w-full mb-8">
+            <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 w-full mb-8 relative">
               <span className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2 block">Ce qui est inclus</span>
               <ul className="flex flex-col gap-2">
-                <li className="flex items-center gap-2 text-sm text-slate-600 font-medium"><Check className="w-3.5 h-3.5 text-emerald-500" /> Chargeur rapide</li>
-                <li className="flex items-center gap-2 text-sm text-slate-600 font-medium"><Check className="w-3.5 h-3.5 text-emerald-500" /> Boîte originale ou premium</li>
-                <li className="flex items-center gap-2 text-sm text-slate-600 font-medium"><Check className="w-3.5 h-3.5 text-emerald-500" /> Garantie constructeur ou 24m équivalente</li>
+                <li className="flex items-center gap-2 text-sm text-slate-700 font-semibold"><Check className="w-3.5 h-3.5 text-emerald-500" strokeWidth={3} /> Chargeur rapide inclus</li>
+                <li className="flex items-center gap-2 text-sm text-slate-700 font-semibold"><Check className="w-3.5 h-3.5 text-emerald-500" strokeWidth={3} /> Boîte premium</li>
+                <li className="flex items-center gap-2 text-sm text-slate-700 font-semibold"><Check className="w-3.5 h-3.5 text-emerald-500" strokeWidth={3} /> Garantie 24 mois</li>
               </ul>
             </div>
 
@@ -118,13 +132,13 @@ export function BestSeller() {
               <span>En stock, expédié aujourd'hui</span>
             </div>
 
-            {/* CTAs - Properly sized & elegant */}
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full">
               <Button className="w-full sm:w-auto px-6 py-2.5 bg-[#3b82f6] hover:bg-blue-600 text-white rounded-lg text-sm font-semibold shadow-md shadow-blue-500/20 transition-all">
                 Ajouter au panier
               </Button>
               <Link to="/produit/1" className="w-full sm:w-auto">
-                <Button variant="outline" className="w-full border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-lg text-sm font-semibold px-6 py-2.5 transition-all">
+                <Button variant="outline" className="w-full border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-lg text-sm font-semibold px-6 py-2.5 transition-all bg-white">
                    Voir la fiche détaillée
                 </Button>
               </Link>

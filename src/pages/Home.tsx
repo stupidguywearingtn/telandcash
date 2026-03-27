@@ -22,17 +22,25 @@ export function Home() {
       transition={{ duration: 0.5 }}
     >
       <Hero />
-      <Marquee />
+      <Marquee /> 
+      {/* Ticker -> dark navy */}
+      <WhyChooseUs /> 
+      {/* -70% -> dark navy */}
+      <WhyRefurbished /> 
+      {/* reconditionné -> blanc cassé chaud */}
+      <Warranty /> 
+      {/* Garantie -> blanc pur */}
+      <BestSeller /> 
+      {/* Best-seller -> off-white légèrement bleuté */}
+      <BestOffers /> 
+      {/* Recommandé -> blanc */}
+      <StoreStory /> 
+      {/* Boutique -> off-white chaud */}
+
       <Categories />
-      <WhyChooseUs />
-      <BestSeller />
-      <BestOffers />
       <Grades />
       <HowItWorks />
-      <StoreStory />
-      <Warranty />
       <Reviews />
-      <WhyRefurbished />
       <FAQ />
     </motion.div>
   );

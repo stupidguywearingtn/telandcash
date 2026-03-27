@@ -15,14 +15,27 @@ export function Warranty() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-slate-900">Garantie & SAV 100% Français</h2>
+            {/* Cursive annotation */}
+            <div className="text-[#3b82f6] font-['Caveat'] text-2xl md:text-3xl -rotate-2 mb-3 ml-1">
+              on s'occupe de tout
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-slate-900 relative">
+              Garantie & SAV 100% Français
+              {/* Sketched shield near title */}
+              <svg width="40" height="40" viewBox="0 0 40 40" className="absolute -top-6 -right-5 stroke-slate-300 fill-none stroke-[2px] opacity-70 rotate-12 hidden sm:block" style={{strokeLinecap: 'round', strokeLinejoin: 'round'}}>
+                <path d="M 20 5 L 32 10 L 32 20 C 32 28 20 35 20 35 C 20 35 8 28 8 20 L 8 10 Z" />
+                <path d="M 12 10 L 28 10 M 12 16 L 28 16 M 15 22 L 25 22" />
+              </svg>
+            </h2>
+            
             <p className="text-lg text-slate-500 mb-10 leading-relaxed font-medium">
               Nous incluons une garantie commerciale gratuite de 24 mois sur tous nos smartphones et tablettes reconditionnés, car nous avons une confiance absolue en nos process de révision.
             </p>
 
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0 text-emerald-600 border border-emerald-200 shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0 text-emerald-600 border border-emerald-200 shadow-sm relative">
                   <Wrench className="w-6 h-6" />
                 </div>
                 <div>
@@ -56,60 +69,67 @@ export function Warranty() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full"
+            className="w-full relative"
           >
-            <div className="relative w-full rounded-[2.5rem] bg-[#0A0F1E] text-white overflow-hidden p-8 md:p-12 shadow-2xl border border-white/10">
+            {/* Curved arrow pointing down to button, positioned outside to flow organically into the column */}
+            <svg width="80" height="120" viewBox="0 0 80 120" className="absolute -left-12 bottom-12 stroke-[#3b82f6] fill-none stroke-[2px] opacity-70 hidden xl:block z-20 pointer-events-none" style={{strokeLinecap: 'round', strokeLinejoin: 'round'}}>
+              <path d="M 20 10 Q 70 50 60 100" />
+              <path d="M 45 95 L 60 100 L 65 85" />
+            </svg>
+
+            {/* Reduced height right column */}
+            <div className="relative w-full rounded-[2rem] bg-[#0A0F1E] text-white overflow-hidden p-6 md:p-8 shadow-2xl border border-white/10">
               
               {/* Subtle Gradient Mesh Background */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 translate-y-1/2" />
               
-              <div className="relative z-10 flex flex-col items-center mb-10 text-center">
-                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 shadow-inner border border-white/20 backdrop-blur-md">
-                  <HeartHandshake className="w-8 h-8 text-[#3b82f6]" strokeWidth={1.5} />
+              <div className="relative z-10 flex flex-col items-center mb-6 text-center">
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-4 shadow-inner border border-white/20 backdrop-blur-md">
+                  <HeartHandshake className="w-6 h-6 text-[#3b82f6]" strokeWidth={1.5} />
                 </div>
-                <div className="font-['Caveat'] text-[#3b82f6] text-3xl -rotate-2 mb-2">
+                <div className="font-['Caveat'] text-[#3b82f6] text-2xl -rotate-2 mb-1">
                   toujours là pour vous
                 </div>
-                <h3 className="text-3xl font-black mb-2 tracking-tight">SAV Ultra-Réactif</h3>
-                <p className="text-white/70 font-medium max-w-sm">Une équipe humaine à votre écoute en France.</p>
+                <h3 className="text-2xl font-black mb-1 tracking-tight">SAV Ultra-Réactif</h3>
+                <p className="text-white/70 font-medium text-sm max-w-sm">Une équipe humaine à votre écoute en France.</p>
               </div>
 
-              <div className="space-y-4 relative z-10">
-                <div className="flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-[#3b82f6]/20 flex items-center justify-center shrink-0">
-                    <PhoneCall className="w-5 h-5 text-[#3b82f6]" />
+              <div className="space-y-3 relative z-10">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#3b82f6]/20 flex items-center justify-center shrink-0">
+                    <PhoneCall className="w-4 h-4 text-[#3b82f6]" />
                   </div>
                   <div>
-                    <div className="font-bold text-lg text-white">01 23 45 67 89</div>
-                    <div className="text-sm text-white/60 font-medium">Lundi-Samedi, 9h-19h (Non surtaxé)</div>
+                    <div className="font-bold text-base text-white leading-tight">01 23 45 67 89</div>
+                    <div className="text-xs text-white/60 font-medium">Lundi-Samedi, 9h-19h (Non surtaxé)</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-[#3b82f6]/20 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-[#3b82f6]" />
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#3b82f6]/20 flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-[#3b82f6]" />
                   </div>
                   <div>
-                    <div className="font-bold text-lg text-white">contact@tel-cash.fr</div>
-                    <div className="text-sm text-white/60 font-medium">Réponse garantie sous 24h ouvrées</div>
+                    <div className="font-bold text-base text-white leading-tight">contact@tel-cash.fr</div>
+                    <div className="text-xs text-white/60 font-medium">Réponse garantie sous 24h ouvrées</div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-5 p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-[#3b82f6]/20 flex items-center justify-center shrink-0">
-                    <MessageSquare className="w-5 h-5 text-[#3b82f6]" />
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#3b82f6]/20 flex items-center justify-center shrink-0">
+                    <MessageSquare className="w-4 h-4 text-[#3b82f6]" />
                   </div>
                   <div>
-                    <div className="font-bold text-lg text-white">Assistance en ligne</div>
-                    <div className="text-sm text-white/60 font-medium">Pour vos demandes de retour sous garantie</div>
+                    <div className="font-bold text-base text-white leading-tight">Assistance en ligne</div>
+                    <div className="text-xs text-white/60 font-medium">Pour vos demandes de retour sous garantie</div>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-10 relative z-10">
+              <div className="mt-8 relative z-10">
                 <Link to="/contact">
-                  <Button className="w-full bg-[#3b82f6] text-white hover:bg-blue-600 shadow-xl shadow-blue-500/20 rounded-xl py-6 font-bold text-lg">
+                  <Button className="w-full bg-[#3b82f6] text-white hover:bg-blue-600 shadow-xl shadow-blue-500/20 rounded-xl py-5 font-bold text-base relative">
                     Contacter le support
                   </Button>
                 </Link>
