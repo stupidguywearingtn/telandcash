@@ -17,7 +17,7 @@ export function Grades() {
         "Garantie 24 mois incluse"
       ],
       stats: {
-        battery: "100%",
+        battery: "≥85%",
         scratches: "Aucune",
         functional: "100%"
       },
@@ -66,7 +66,7 @@ export function Grades() {
         "Garantie 12 mois incluse"
       ],
       stats: {
-        battery: "≥80%",
+        battery: "≥85%",
         scratches: "Visibles",
         functional: "100%"
       },
