@@ -56,3 +56,26 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes gradient-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text-blue-animated {
+  background: linear-gradient(-45deg, #0ea5e9, #3b82f6, #2dd4bf, #0ea5e9);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-pan 4s ease infinite;
+}
+
+@keyframes levitate {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-levitate {
+  animation: levitate 4s ease-in-out infinite;
+}

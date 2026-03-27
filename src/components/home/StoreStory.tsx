@@ -1,119 +1,66 @@
 import { motion } from 'framer-motion';
-import { Button } from '../ui/Button';
-import { MapPin, Star } from 'lucide-react';
 
 export function StoreStory() {
   return (
-    <section className="py-24 bg-[#FAFAFA] text-slate-900 overflow-hidden relative">
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
-          {/* Left Column (Text) */}
-          <motion.div 
+    <section className="py-20 px-4 bg-[#FAFAFA]">
+      <div className="container max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-start"
           >
-            {/* Handwritten annotation */}
-            <div className="text-[#3b82f6] font-['Caveat'] text-2xl md:text-3xl -rotate-2 mb-2 ml-1">
-              fait avec passion
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-[54px] font-black tracking-tight mb-8 leading-[1.1]">
-              Pas un entrepôt.<br/>
-              <span className="text-[#0ea5e9]">
-                Une vraie boutique.
-              </span>
+            <p className="font-['Caveat'] text-[#3b82f6] text-3xl mb-2 -rotate-2 ml-1">fait avec passion</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.1] tracking-tight text-slate-900">
+              Pas un entrepôt.<br />
+              <span className="gradient-text-blue-animated">Une vraie boutique.</span>
             </h2>
-            
-            <ul className="space-y-5 mb-10 w-full">
-              <li className="flex items-start gap-4">
-                <div className="mt-1.5 flex items-center justify-center w-5 h-5 rounded-full bg-blue-100 flex-shrink-0">
-                  <div className="w-2.5 h-2.5 rounded-full bg-blue-600" />
-                </div>
-                <div className="text-slate-600 font-medium text-lg leading-relaxed">
-                  <span className="font-semibold text-slate-800">Équipe locale</span> — Tout est géré depuis nos locaux à Angers
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="mt-1.5 flex items-center justify-center w-5 h-5 rounded-full bg-blue-100 flex-shrink-0">
-                  <div className="w-2.5 h-2.5 rounded-full bg-blue-600" />
-                </div>
-                <div className="text-slate-600 font-medium text-lg leading-relaxed">
-                  <span className="font-semibold text-slate-800">Diagnostic précis</span> — Chaque appareil passe entre nos mains expertes
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="mt-1.5 flex items-center justify-center w-5 h-5 rounded-full bg-blue-100 flex-shrink-0">
-                  <div className="w-2.5 h-2.5 rounded-full bg-blue-600" />
-                </div>
-                <div className="text-slate-600 font-medium text-lg leading-relaxed">
-                  <span className="font-semibold text-slate-800">SAV direct</span> — Pas de centre d'appels délocalisés, nous vous répondons directement
-                </div>
-              </li>
+            <ul className="space-y-5 mb-8">
+              {[
+                { label: "Équipe locale", desc: "Tout est géré depuis nos locaux à Angers" },
+                { label: "Diagnostic précis", desc: "Chaque appareil passe entre nos mains expertes" },
+                { label: "SAV direct", desc: "Pas de centre d'appels délocalisés, nous vous répondons directement" },
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <span className="mt-1 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]" />
+                  </span>
+                  <span className="text-slate-600 font-medium text-lg leading-relaxed">
+                    <strong className="text-slate-900">{item.label}</strong> — <span className="text-slate-500">{item.desc}</span>
+                  </span>
+                </li>
+              ))}
             </ul>
-
-            <Button variant="outline" className="px-8 py-6 text-sm md:text-lg font-bold rounded-xl border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white transition-all shadow-sm">
+            <button className="border-2 border-slate-900 text-slate-900 font-bold text-lg px-8 py-4 rounded-xl hover:bg-slate-900 hover:text-white transition-colors">
               Nous rendre visite
-            </Button>
+            </button>
           </motion.div>
-
-          {/* Right Column (Visual with floating elements) */}
           <motion.div 
+            className="flex justify-center relative mt-12 md:mt-0"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex justify-center items-center mt-12 lg:mt-0 px-8"
           >
-            {/* The Main Image Area */}
-            <div className="rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden border-[10px] border-white max-w-[420px] aspect-[4/5] bg-slate-100 relative w-full text-center flex items-center justify-center">
-              {/* Optional: if you want a subtle logo or text inside the frame when image is missing/loading */}
-              <span className="text-slate-300 font-medium">Notre boutique</span>
-              {/* the actual image */}
-              <img 
-                src="https://images.unsplash.com/photo-1621379183861-fede97299a91?auto=format&fit=crop&w=800&q=80"
-                alt="Notre boutique"
-                className="absolute inset-0 w-full h-full object-cover opacity-90 grayscale-[20%]"
-              />
+            <div className="relative">
+              <div className="w-72 h-80 md:w-80 md:h-[420px] rounded-2xl bg-slate-100 border-[8px] border-white shadow-xl overflow-hidden" style={{ transform: "rotate(2deg)" }}>
+                <div className="w-full h-full rounded-xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center relative">
+                  <span className="text-slate-400 font-medium absolute z-0 text-sm">Notre boutique</span>
+                  <img src="https://images.unsplash.com/photo-1621379183861-fede97299a91?auto=format&fit=crop&w=800&q=80" alt="Boutique" className="w-full h-full object-cover opacity-90 grayscale-[20%] relative z-10" />
+                </div>
+              </div>
+              <div className="absolute -top-4 -right-4 bg-white shadow-lg rounded-full px-5 py-2.5 text-sm font-bold animate-levitate border border-slate-100 flex items-center gap-2">
+                <span className="text-yellow-400 text-base">⭐</span> <span className="text-slate-800">5/5</span>
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-white shadow-lg rounded-full px-5 py-2.5 text-sm font-bold text-slate-800 animate-levitate border border-slate-100 flex items-center gap-2" style={{ animationDelay: "0.5s" }}>
+                <span>📍</span> Angers
+              </div>
+              <div className="absolute top-1/2 -right-10 bg-[#0A0F1E] text-white shadow-lg rounded-full px-5 py-2.5 text-sm font-bold animate-levitate" style={{ animationDelay: "1.2s" }}>
+                +5 ans d'expérience
+              </div>
             </div>
-
-            {/* Top Right Badge (Rating) */}
-            <motion.div 
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="absolute top-[-15px] right-[5%] md:right-[15%] bg-white rounded-full py-2.5 px-5 shadow-lg border border-slate-100 z-20 flex items-center gap-2"
-            >
-              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-              <span className="font-bold text-slate-800 text-sm">5/5</span>
-            </motion.div>
-
-            {/* Middle Right Badge (Experience) */}
-            <motion.div 
-              initial={{ x: 20, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="absolute top-1/2 -translate-y-1/2 right-[-20px] md:right-[5%] bg-[#0A0F1E] rounded-full py-2.5 px-5 shadow-xl z-20"
-            >
-              <span className="font-bold text-white text-sm whitespace-nowrap">+5 ans d'expérience</span>
-            </motion.div>
-
-            {/* Bottom Left Badge (Location) */}
-            <motion.div 
-              initial={{ x: -20, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="absolute bottom-[-15px] left-[0%] md:left-[10%] bg-white rounded-full py-2.5 px-5 shadow-lg border border-slate-100 z-20 flex items-center gap-2"
-            >
-              <MapPin className="w-4 h-4 text-rose-500 fill-rose-500/20" />
-              <span className="font-bold text-slate-800 text-sm">Angers</span>
-            </motion.div>
-
           </motion.div>
-
         </div>
       </div>
     </section>
