@@ -2,8 +2,10 @@ import { Hero } from '../components/home/Hero';
 import { Marquee } from '../components/home/Marquee';
 import { Categories } from '../components/home/Categories';
 import { BestOffers } from '../components/home/BestOffers';
+import { BestSeller } from '../components/home/BestSeller';
 import { Grades } from '../components/home/Grades';
 import { HowItWorks } from '../components/home/HowItWorks';
+import { StoreStory } from '../components/home/StoreStory';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { Reviews } from '../components/home/Reviews';
 import { Warranty } from '../components/home/Warranty';
@@ -22,12 +24,14 @@ export function Home() {
       <Hero />
       <Marquee />
       <Categories />
+      <WhyChooseUs />
+      <BestSeller />
       <BestOffers />
       <Grades />
       <HowItWorks />
+      <StoreStory />
       <Warranty />
       <Reviews />
-      <WhyChooseUs />
       <WhyRefurbished />
       <FAQ />
     </motion.div>
